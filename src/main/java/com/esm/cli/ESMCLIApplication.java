@@ -10,10 +10,10 @@ import org.springframework.security.oauth2.client.token.grant.password.ResourceO
 import org.springframework.security.oauth2.common.AuthenticationScheme;
 
 @SpringBootApplication
-public class EsmCommandLineInterfaceApplication implements CommandLineRunner {
+public class ESMCLIApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EsmCommandLineInterfaceApplication.class, args);
+		SpringApplication.run(ESMCLIApplication.class, args);
 	}
 
 	@Override
@@ -38,7 +38,7 @@ public class EsmCommandLineInterfaceApplication implements CommandLineRunner {
 		String token = template.getAccessToken().getValue();
 		System.out.println("Token = " + token);
 
-		String data = template.getForObject("http://localhost:9999/services/message", String.class);
+		String data = template.getForObject("http://localhost:9090/services/message", String.class);
 		System.out.println("Data = " + data);
 	}
 }
