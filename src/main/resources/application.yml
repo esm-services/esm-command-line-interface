@@ -1,0 +1,14 @@
+server:
+  port: 7000
+spring:
+  application:
+    name: command-line-interface
+  profiles:
+    active:
+    - dev
+security:
+  basic:
+    enabled: false
+  oauth2:
+    resource:
+      filter-order: 3
