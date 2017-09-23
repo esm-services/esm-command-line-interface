@@ -31,7 +31,7 @@ public class ESMCLIApplication implements CommandLineRunner {
 		ResourceOwnerPasswordResourceDetails details = new ResourceOwnerPasswordResourceDetails();
 		details.setScope(Arrays.asList("read", "write"));
 		details.setClientAuthenticationScheme(AuthenticationScheme.header);
-		details.setAccessTokenUri("http://localhost:9999/oauth2/services/oauth/token");
+		details.setAccessTokenUri("http://localhost:1111/authorization-server/oauth/token");
 		details.setClientId("commandlineinterface");
 		details.setClientSecret("commandlineinterface");
 		details.setGrantType("password");
@@ -50,7 +50,7 @@ public class ESMCLIApplication implements CommandLineRunner {
 		String token = template.getAccessToken().getValue();
 		System.out.println("Token = " + token);
 
-		String data = template.getForObject("http://localhost:9090/services/message", String.class);
+		String data = template.getForObject("http://localhost:1111/account-service/message", String.class);
 		System.out.println("Account Data ==> " + data);
 
 		System.out.println("==============================================================================");
